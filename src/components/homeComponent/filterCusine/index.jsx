@@ -4,7 +4,7 @@ import { getCountries } from "../../../API/search";
 import './style.scss'
 export default function FilterCusineComponent({active}) {
     
-  const [setSearchParams] = useSearchParams()
+  const [searchParams,setSearchParams] = useSearchParams()
   const [countries, setCountries] = useState([])
 
     async function getAllCountries() {
@@ -32,7 +32,7 @@ export default function FilterCusineComponent({active}) {
             </div>
             <div className="results-cusines">
                 {
-                    countries.map((c, i) =>(
+                    countries?.map((c, i) =>(
                         <button key={i} value={c?.strArea} onClick={(e) => handleArea(e)} className={`item ${active === c?.strArea && 'active'}`}>{c?.strArea}</button>
 
                     ))

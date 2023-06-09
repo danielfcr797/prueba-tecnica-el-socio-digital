@@ -21,6 +21,12 @@
             color: #ef4c00;
             font-size: 35px;
             cursor: pointer;
+            h5{
+                .link{
+                    color: #ef4c00;
+                    text-decoration: none;
+                }
+            }
         }
         .cont-tabs{
             display: flex;
@@ -32,6 +38,10 @@
                 position: relative;
                 padding: 0px 15px;
                 cursor: pointer;
+                .linkTab{
+                    text-decoration: none;
+                    cursor: pointer;
+                }
             }
 
             .active::before{

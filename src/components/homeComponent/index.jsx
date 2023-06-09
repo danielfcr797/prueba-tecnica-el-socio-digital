@@ -96,7 +96,7 @@ export default function HomeComponent() {
                     All
                   </button>
             {
-              categories.map((cat,i) =>(
+              categories?.map((cat,i) =>(
                 
                 <button key={i} value={cat?.strCategory} onClick={(e) => handleCategories(e)} className={`item-category ${paramActive === cat?.strCategory && 'active' } `}>
                   {cat?.strCategory}
@@ -107,7 +107,7 @@ export default function HomeComponent() {
           </div>
           <div className="content-results">
             {
-              meals.map((m,i) =>(
+              meals?.map((m,i) =>(
                 <CardMealComponent key={i} data={m} />
 
               ))
