@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/technical-test/static/css/main.b71e67df.css",
+    "main.js": "/technical-test/static/js/main.dc9ef48b.js",
+    "static/media/banner recetas.png": "/technical-test/static/media/banner recetas.3c9def8232919036fe8c.png",
+    "index.html": "/technical-test/index.html",
+    "main.b71e67df.css.map": "/technical-test/static/css/main.b71e67df.css.map",
+    "main.dc9ef48b.js.map": "/technical-test/static/js/main.dc9ef48b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b71e67df.css",
+    "static/js/main.dc9ef48b.js"
+  ]
+}
