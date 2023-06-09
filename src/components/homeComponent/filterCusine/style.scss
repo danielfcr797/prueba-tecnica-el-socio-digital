@@ -33,12 +33,19 @@
             font-size: 14px;
             transition: all 0.5s;
             font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            border: none;
         }
         .item:hover{
             background-color: #ef4c00;
             color: white;
 
         }
+        .active{
+          background-color: #ef4c00;
+          color: white;
+      }
     }
 
     .results-cusines::-webkit-scrollbar {

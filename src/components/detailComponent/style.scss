@@ -6,12 +6,23 @@
     width: calc(100% - 24%);
     padding-left: 12%;
     padding-right: 12%;
+    margin-bottom: 150px;
     position: relative;
     .absolute{
         position: absolute;
         z-index: 2;
         left: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         top: 50px;
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background-color: transparent;
+        }
         .back{
             font-size: 50px;
             cursor: pointer;
@@ -26,6 +37,8 @@
         background-color: transparent;
         img{
             border-radius: 20px;
+            width: 100%;
+            max-height: 300px;
         }
     }
     .hour{

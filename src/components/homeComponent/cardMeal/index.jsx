@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { useNavigate } from "react-router-dom";
 
 import './style.scss'
-export default function CardMealComponent(params) {
+export default function CardMealComponent({data}) {
+    
+    const [infoMeal, setInfoMeal] = useState({})
+    const navigate = useNavigate();
+
+
+    function redirectDetail() {
+        navigate(`/detail/${infoMeal.idMeal}`);
+    }
+
+    useEffect(()=>{
+        setInfoMeal(data)
+    }, [data])
     return(
-        <div className="cont-card-main">
-            <img src="" alt="" />
+        <div className="cont-card-main" onClick={() => redirectDetail()}>
+            <img src={infoMeal?.strMealThumb} alt="" />
             <div className="padd">
                 <div className="cont-name-and-favorite">
-                    <h4 className="name">titulo</h4>
+                    <h4 className="name">{infoMeal?.strMeal}</h4>
                     <FavoriteBorderIcon className="icon"/>
                 </div>
                 <div className="cont-stars">

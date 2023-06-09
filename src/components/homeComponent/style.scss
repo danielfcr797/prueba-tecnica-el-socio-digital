@@ -102,23 +102,31 @@
                     border-radius: 100px;
                     background-color: #f4f9ff;
                     font-size: 15px;
+                    margin:0px 15px 10px 0px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     min-width: 100px;
                     font-weight: 500;
+                    transition: all 0.5s;
+                    outline: none;
+                    border: none;
+                }
+                .item-category:hover{
+                    background-color: #ef4c00;
+                    color: white;
+                    box-shadow: 1px 1px 5px gray;
                 }
                 .active{
                     background-color: #ef4c00;
                     color: white;
-                    font-weight: 600;
                 }
             }
             .content-results{
                 width: 100%;
                 display: grid;
-                grid-template-columns: auto auto auto;
-                grid-gap: 25px;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 50px;
                 background-color: transparent;
                 margin-top: 25px;
             }

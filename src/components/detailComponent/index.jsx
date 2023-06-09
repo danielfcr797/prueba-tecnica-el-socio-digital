@@ -1,19 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import './style.scss'
+import { useLocation, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default function DetailComponent(params) {
+import './style.scss'
+import { getDetailMael } from "../../API/search";
+
+export default function DetailComponent() {
+    const params = useParams()
+    const location = useLocation()
+    const [detail, setDetail] = useState({})
+
+    const navigate = useNavigate();
+
+    async function getDetail(id) {
+        let res = await getDetailMael(id)
+        if (res) {
+            setDetail(res)
+        }
+    }
+
+    function handleBack() {
+        navigate(-1);
+    }
+
+
+
+    useEffect(()=>{
+        if (params.id) {
+            getDetail(params.id)
+        }
+    },[location])
     return(
         <div className="cont-detail-component">
             <div className="absolute">
-                <ArrowBackIosIcon className="back"/>
+                <button onClick={() => handleBack()}>
+                    <ArrowBackIosIcon className="back"/>
+                </button>
             </div>
             <div className="cont-img-banner">
-                <img src="" alt="" />
+                <img src={detail.strMealThumb} alt="" />
             </div>
             <div className="hour">
                 <AccessTimeIcon/> 20-30 
@@ -22,7 +52,7 @@ export default function DetailComponent(params) {
                 <div className="cont-left-title">
                     <div className="cont-title-and-stars">
                         <div className="title">
-                            titulo
+                            {detail.strMeal}
                         </div>
                         <div className="stars">
                             <StarIcon className="icon"/>
@@ -45,8 +75,7 @@ export default function DetailComponent(params) {
             </div>
             <div className="cont-instructions">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, veniam fugiat iure dolore ratione saepe pariatur quidem quis nihil esse mollitia nam molestias cupiditate, nisi placeat voluptas laboriosam, ducimus impedit.
-
+                    {detail.strInstructions}
                 </p>
             </div>
         </div>

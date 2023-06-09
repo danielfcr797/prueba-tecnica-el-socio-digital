@@ -14,9 +14,9 @@ const Router = () =>{
         <ReactRouter>
             <App>
                 <Routes>
-                    <Route path="*" element={<Navigate replace to="/" />} />
-                    <Route path="/" element={<HomePage/>} />
-                    <Route path="/detail" element={<DetailPage/>} />
+                    <Route path="*" element={<Navigate replace to="/home" />} />
+                    <Route path="/home" element={<HomePage/>} />
+                    <Route path="/detail/:id" element={<DetailPage/>} />
                 </Routes>
             </App>
         </ReactRouter>
