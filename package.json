@@ -1,7 +1,7 @@
 {
   "name": "technical-test",
   "version": "0.1.0",
-  "homepage": "https://danielfcr797.github.io/prueba-tecnica-el-socio-digital",
+  "homepage": "https://danielfcr797.github.io/technical-test",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
