@@ -21,7 +21,7 @@ export default function HomeComponent() {
   async function getAllCategories() {
     let response = await getCategories();
     if (response) {
-      setCategories(response);
+      setCategories(response ?? []);
     }
   }
 
@@ -41,9 +41,7 @@ export default function HomeComponent() {
 
   async function getAllMeals(param, value) {
     let res = await getMeals(param, value)
-    if (res) {
-      setMeals(res);
-    }
+    setMeals(res ?? []);
   }
 
   useEffect(()=>{
@@ -92,9 +90,9 @@ export default function HomeComponent() {
             </div>
           </div>
           <div className="cont-categories">
-            <button className="item-category">
-                    All
-                  </button>
+            <label className="title">
+                    Categorias:
+                  </label>
             {
               categories?.map((cat,i) =>(
                 
@@ -107,10 +105,13 @@ export default function HomeComponent() {
           </div>
           <div className="content-results">
             {
+
+              meals.length > 0 ?
               meals?.map((m,i) =>(
                 <CardMealComponent key={i} data={m} />
 
               ))
+              : 'No se encontraron resultados'
             }
 
           </div>
